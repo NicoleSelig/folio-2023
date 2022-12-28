@@ -1,10 +1,18 @@
-import { Text, Html, ContactShadows, PresentationControls, Float, useGLTF, Environment, Camer} from '@react-three/drei'
+import { Text, Html, ContactShadows, PresentationControls, Float, useGLTF, Environment, PerspectiveCamera} from '@react-three/drei'
+import { useSpring, a} from '@react-spring/three'
 import { useState } from 'react'
 
 export default function Experience()
 {
-    const computer = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf')
-    const [hovered, setHover] = useState(false)
+    const computerModel = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf')
+    const [active, setActive] = useState(false)
+
+    const computerSpring = useSpring({
+        position: active ? [-2, -1.555, 2.5]: [0, -1.2, 0],
+        rotation: active ? [ -Math.PI / 80, -Math.PI / 4, 0]:[0, 0, 0],
+        scale: active ? 1.5 : 1
+    })
+
     return <>
         <Environment preset="city" />
         <color args={['#695b5b']} attach="background" />
@@ -23,35 +31,37 @@ export default function Experience()
                 height={ 1.65 }
                 intensity={ 65 }
                 color={ '#ffffff' }
-                rotation={ [-0.1, Math.PI, 0] }
-                position={ [0, 0.55, -1.15] }
+                rotation={ [0, 0.55, -1.15] }
+                position={ [-0.1, Math.PI, 0] }
             />
-            {/* <computer/> */}
+
+        <a.mesh
+            rotation={computerSpring.rotation}
+            position={computerSpring.position}
+            scale={computerSpring.scale}
+        >
             <primitive
-                object={ computer.scene }
-                position-y={ -1.2 }
-            >
-                <Html
-                    transform
-                    wrapperClass='htmlScreen'
-                    distanceFactor={ 1.17 }
-                    position={ [0, 1.56, -1.4] }
-                    rotation-x={ -0.256 }
+                    object={ computerModel.scene }
                 >
-                    <iframe
-                        src='https://www.sep.com'
-                        onPointerOver={(event) =>{
-                            //set camera to zoom in 
-                            console.log(hovered)
-                            setHover(true)
-                        }}
-                        onPointerOut={() => {
-                            console.log(hovered)
-                            setHover(false)
-                        }}
-                    />
-                </Html>
-            </primitive>
+                    <Html
+                        transform
+                        wrapperClass='htmlScreen'
+                        distanceFactor={ 1.17 }
+                        position={ [0, 1.56, -1.4] }
+                        rotation-x={ -0.256 }
+                    >
+                        <iframe
+                            src='https://www.sep.com'
+                            onPointerOver={() =>{
+                                setActive(true)
+                            }}
+                            onPointerOut={() => {
+                                setActive(false)
+                            }}
+                        />
+                    </Html>
+                </primitive>
+        </ a.mesh>
 
             <Text
             font="./bangers-v20-latin-regular.woff"
