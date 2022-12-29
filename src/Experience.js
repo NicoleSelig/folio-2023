@@ -25,7 +25,10 @@ export default function Experience()
             config={{ mass: 2, tension: 400 }} //elastic effect
             snap={{ mass: 2, tension: 400 }} // snap back to original position
         >
-        <Float rotationIntensity={ 0.4 }>
+        <Float
+            rotationIntensity={ 0.4 }
+            speed={active ? 0 : 1}
+            >
             <rectAreaLight
                 width={ 2.5 }
                 height={ 1.65 }
