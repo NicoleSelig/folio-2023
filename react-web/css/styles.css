@@ -101,7 +101,33 @@ hr {
     width: 30%
 }
 
-.coding-img {
+.about-me {
+    margin: auto;
+    width: 30%
+}
+
+ul {
+    column-gap: 30px;
+    column-count: 3;
+    color: #40514e;
+    margin: 25px auto 0 auto;
+    line-height: 2;
+    text-align: left;
+}
+
+.tech-stack {
+    font-weight: bold;
+}
+
+.project-github {
+    width: 5%;
+}
+
+.project-website {
+    width: 5%;
+}
+
+.sword-img {
     width: 35%;
     float: left;
     margin-right: 30px;
@@ -125,6 +151,11 @@ hr {
 }
 
 .github-logo {
+    width: 5%;
+    margin: 50px auto 0px 10px;
+}
+
+.website-icon {
     width: 5%;
     margin: 50px auto 0px 10px;
 }
