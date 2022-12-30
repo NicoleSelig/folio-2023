@@ -1,3 +1,140 @@
 body {
-    background-color: blue;
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    padding-top: 150px;
+    color: #003249;
+    margin: 200px auto 0 auto;
+    font-size: 8rem;
+    margin-top: 0;
+    font-family: 'Sacramento', serif;
+    line-height: 2;
+}
+
+h2 {
+    color: #003249;
+    margin: 50px auto 0 auto;
+    font-style: bold;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+h3 {
+    color: #33cccc;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    margin: 50px auto 0 auto;
+}
+
+.top-container {
+    background-color: #33cccc;
+    position: relative;
+    height: 100vh;
+    margin: 0px auto 50px auto;
+}
+
+hr {
+    margin: 100px auto;
+    border: none;
+    width: 1rem;
+    height: 1rem;
+    background: lightgray;
+    border-radius: 1rem;
+    box-shadow:
+        -4rem 0 lightgray,
+        -2rem 0 lightgray,
+        2rem 0 lightgray,
+        4rem 0 lightgray;
+}
+
+.middle-container {
+}
+
+.bottom-container {
+
+}
+
+.pro {
+    text-decoration: underline;
+}
+
+.top-cloud {
+    position: absolute;
+    right: 300px;
+    top: 150px;
+}
+
+.bottom-cloud {
+    position: absolute;
+    left: 300px;
+    bottom: 300px;
+}
+
+.mountain {
+    bottom: 0px;
+    left: 50%;
+    margin-top: -178.5px; /*half the height*/
+    margin-left: -299px; /*half the width*/
+    position: absolute;
+}
+
+.skill-row {
+    text-align: left;
+    margin: 100px auto 100px auto;
+    width: 50%;
+    line-height: 2;
+}
+
+.profile-avatar {
+    text-align: center;
+    width: 15%;
+    margin: 100px auto 0px auto;
+}
+
+.introduction {
+    margin: 50px auto 50px auto;
+    width: 50%
+}
+
+.coding-img {
+    width: 23%;
+    float: left;
+    margin-right: 30px;
+}
+
+.cloud-img {
+    width: 23%;
+    float: right;
+    margin-left: 30px;
+}
+
+.email-img {
+    width: 15%;
+    float: center;
+}
+
+.get-in-touch {
+    margin-top: 0px;
+}
+
+.get-in-touch-desc {
+    margin: 50px auto;
+    width: 50%;
+}
+
+
+.github-logo {
+    width: 5%;
+    margin: 50px auto 0px 10px;
+}
+
+.linkedin-logo {
+    width: 5%;
+    margin: 50px 10px 0px auto;
 }
