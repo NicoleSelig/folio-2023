@@ -6,7 +6,8 @@ on:
       - master
 permissions:
   contents: write
-working-directory: ./web
+env:
+  working-directory: ./web
 
 jobs:
   build-and-deploy:
